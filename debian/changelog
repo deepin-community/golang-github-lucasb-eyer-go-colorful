@@ -1,5 +1,42 @@
-template-repository (1.0-1) unstable; urgency=medium
+golang-github-lucasb-eyer-go-colorful (1.2.0-1) unstable; urgency=medium
 
-  * Initial release
+  * New upstream version 1.2.0
+  * debian/gbp.conf: Set debian-branch to debian/sid for DEP-14 conformance
+  * Organize debian/control fields with "cme fix dpkg"
+  * Change Section from devel to golang
+  * Bump Standards-Version to 4.6.0 (no change)
+  * Mark library package with "Multi-Arch: foreign"
+  * Add myself to the list of Uploaders
+  * debian/rules: export DH_GOLANG_INSTALL_EXTRA := hsluv-snapshot-rev4.json
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Anthony Fok <foka@debian.org>  Sat, 04 Sep 2021 03:22:31 -0600
+
+golang-github-lucasb-eyer-go-colorful (1.0.3-1) unstable; urgency=medium
+
+  [ Paride Legovini ]
+  * New upstream version 1.0.3.
+  * d/control:
+    - bump Standards-Version to 4.5.0, no changes needed.
+    - bump dh compat level to 13 via debhelper-compat; drop d/compat.
+    - add Rules-Requires-Root: no.
+  * debian/*: use the paride@debian.org email alias.
+  * d/copyright: update copyright years.
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+
+ -- Paride Legovini <paride@debian.org>  Mon, 24 Aug 2020 22:38:22 +0000
+
+golang-github-lucasb-eyer-go-colorful (1.0-2) unstable; urgency=medium
+
+  * Timeout for tests increased to one hour
+  * Bump Standards-Version to 4.2.0 (no changes needed)
+
+ -- Paride Legovini <pl@ninthfloor.org>  Sat, 11 Aug 2018 14:54:58 +0000
+
+golang-github-lucasb-eyer-go-colorful (1.0-1) unstable; urgency=medium
+
+  * Initial release (Closes: #904253)
+
+ -- Paride Legovini <pl@ninthfloor.org>  Sun, 22 Jul 2018 12:22:10 +0200

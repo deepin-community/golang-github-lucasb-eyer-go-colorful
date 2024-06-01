@@ -1,4 +1,20 @@
 #!/usr/bin/make -f
 
+export DH_GOLANG_EXCLUDES := doc
+export DH_GOLANG_INSTALL_EXTRA := hsluv-snapshot-rev4.json
+
 %:
-	dh $@
+	dh $@ --buildsystem=golang --with=golang
+
+override_dh_auto_test:
+	# The default timeout for tests is 10m, which is not enough for
+	# slower or overloaded machines. Let's increase it to one hour.
+	dh_auto_test -- -timeout 1h
+
+override_dh_auto_install:
+	dh_auto_install
+
+	# Workaround for #904261:
+	for pkg in $(DH_GOLANG_EXCLUDES); do \
+	    rm -rfv debian/*/usr/share/gocode/src/github.com/lucasb-eyer/go-colorful/$$pkg;\
+	    done
